@@ -1,0 +1,39 @@
+project:
+  name: PQC-Migrate
+  version: "0.1.0"
+
+benchmark:
+  iterations: 1000
+  warmup: 1
+  time_unit: microseconds
+
+classical:
+  kem:
+    - name: X25519
+      category: key_exchange
+
+    - name: RSA-2048
+      category: encryption
+
+  signature:
+    - name: ECDSA-P256
+      category: signature
+
+pqc:
+  kem:
+    - name: ML-KEM-768
+      category: key_encapsulation
+
+  signature:
+    - name: ML-DSA-65
+      category: signature
+
+results:
+  directory: results
+  crypto: results/crypto
+  metadata: results/metadata
+  experiments: results/experiments
+
+environment:
+  operating_system: Ubuntu 24.04.4 LTS
+  platform: WSL2

@@ -1,0 +1,45 @@
+PQC-Migrate Experimental Environment
+====================================
+
+Timestamp:
+2026-08-28 06:54:11 UTC
+
+Operating System:
+Ubuntu 24.04.4 LTS
+
+Kernel:
+6.6.87.2-microsoft-standard-WSL2
+
+Architecture:
+x86_64
+
+CPU:
+Architecture:                         x86_64
+CPU(s):                               12
+On-line CPU(s) list:                  0-11
+Model name:                           12th Gen Intel(R) Core(TM) i7-1255U
+Thread(s) per core:                   2
+Core(s) per socket:                   6
+Socket(s):                            1
+NUMA node0 CPU(s):                    0-11
+
+Memory:
+               total        used        free      shared  buff/cache   available
+Mem:           7.6Gi       531Mi       7.0Gi       3.6Mi       314Mi       7.1Gi
+Swap:          2.0Gi          0B       2.0Gi
+
+Compiler:
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+
+CMake:
+cmake version 3.28.3
+
+OpenSSL:
+OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)
+
+Python:
+Python 3.12.3
+
+liboqs:
+/usr/local/lib/liboqs.a
+
