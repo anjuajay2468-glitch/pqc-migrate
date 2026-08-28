@@ -1,0 +1,3 @@
+configuration,key_exchange,iterations,successful,average_us,minimum_us,maximum_us
+Classical TLS,X25519,100,100,26211,21956,32626
+Hybrid PQC TLS,X25519MLKEM768,100,100,8170,6832,10829
