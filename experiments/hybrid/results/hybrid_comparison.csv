@@ -1,0 +1,4 @@
+configuration,components,iterations,successful,average_us,minimum_us,maximum_us
+Classical,X25519,1000,1000,50.714,26.823,910.457
+PQC,ML-KEM-768,1000,1000,42.261,22.442,723.183
+Hybrid,X25519+ML-KEM-768,1000,1000,94.480,49.645,1032.814

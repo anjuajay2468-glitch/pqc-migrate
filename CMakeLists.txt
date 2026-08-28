@@ -8,6 +8,7 @@ project(PQC_Migrate
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
+
 # ============================================================
 # liboqs
 # ============================================================
@@ -142,7 +143,12 @@ target_link_libraries(rsa_benchmark PRIVATE
     crypto
     benchmark_common
 )
-# Phase 4 - ML-KEM-768 analysis
+
+
+# ============================================================
+# Phase 4 - ML-KEM-768 Analysis
+# ============================================================
+
 add_executable(mlkem_analysis
     experiments/pqc/mlkem/mlkem_analysis.c
 )
@@ -155,7 +161,12 @@ target_link_libraries(mlkem_analysis PRIVATE
     ${OQS_LIBRARY}
     crypto
 )
-# Phase 4 - ML-DSA-65 analysis
+
+
+# ============================================================
+# Phase 4 - ML-DSA-65 Analysis
+# ============================================================
+
 add_executable(mldsa_analysis
     experiments/pqc/mldsa/mldsa_analysis.c
 )
@@ -167,4 +178,61 @@ target_include_directories(mldsa_analysis PRIVATE
 target_link_libraries(mldsa_analysis PRIVATE
     ${OQS_LIBRARY}
     crypto
+)
+
+
+# ============================================================
+# Phase 5 - X25519 + ML-KEM-768 Hybrid
+# ============================================================
+
+add_executable(hybrid_x25519_mlkem
+    experiments/hybrid/src/hybrid_x25519_mlkem.c
+)
+
+target_include_directories(hybrid_x25519_mlkem PRIVATE
+    ${OQS_INCLUDE_DIR}
+)
+
+target_link_libraries(hybrid_x25519_mlkem PRIVATE
+    ${OQS_LIBRARY}
+    crypto
+    m
+)
+
+
+# ============================================================
+# Phase 5.4 - Hybrid Validation
+# ============================================================
+
+add_executable(hybrid_validation
+    experiments/hybrid/src/hybrid_validation.c
+)
+
+target_include_directories(hybrid_validation PRIVATE
+    ${OQS_INCLUDE_DIR}
+)
+
+target_link_libraries(hybrid_validation PRIVATE
+    ${OQS_LIBRARY}
+    crypto
+    m
+)
+
+
+# ============================================================
+# Phase 5.5 - Hybrid Performance Benchmark
+# ============================================================
+
+add_executable(hybrid_benchmark
+    experiments/hybrid/src/hybrid_benchmark.c
+)
+
+target_include_directories(hybrid_benchmark PRIVATE
+    ${OQS_INCLUDE_DIR}
+)
+
+target_link_libraries(hybrid_benchmark PRIVATE
+    ${OQS_LIBRARY}
+    crypto
+    m
 )

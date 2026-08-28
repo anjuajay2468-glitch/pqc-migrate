@@ -1,0 +1,5 @@
+algorithm,category,operation,iterations,successful,average_us,minimum_us,maximum_us,correctness
+X25519,CLASSICAL,agreement,1000,1000,50.714,26.823,910.457,PASS
+ML-KEM-768,PQC,agreement,1000,1000,42.261,22.442,723.183,PASS
+X25519+ML-KEM-768,HYBRID,combination,1000,1000,1.505,0.378,96.488,PASS
+X25519+ML-KEM-768,HYBRID,total,1000,1000,94.480,49.645,1032.814,PASS
