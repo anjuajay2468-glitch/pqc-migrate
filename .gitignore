@@ -1,0 +1,29 @@
+# Build output
+build/
+**/build/
+
+# Compiled binaries
+*.o
+*.a
+*.so
+*.out
+mlkem_demo
+
+# External dependencies
+liboqs/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Experimental output
+data/raw/
+results/generated/
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
