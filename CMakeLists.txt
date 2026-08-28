@@ -142,3 +142,29 @@ target_link_libraries(rsa_benchmark PRIVATE
     crypto
     benchmark_common
 )
+# Phase 4 - ML-KEM-768 analysis
+add_executable(mlkem_analysis
+    experiments/pqc/mlkem/mlkem_analysis.c
+)
+
+target_include_directories(mlkem_analysis PRIVATE
+    ${OQS_INCLUDE_DIR}
+)
+
+target_link_libraries(mlkem_analysis PRIVATE
+    ${OQS_LIBRARY}
+    crypto
+)
+# Phase 4 - ML-DSA-65 analysis
+add_executable(mldsa_analysis
+    experiments/pqc/mldsa/mldsa_analysis.c
+)
+
+target_include_directories(mldsa_analysis PRIVATE
+    ${OQS_INCLUDE_DIR}
+)
+
+target_link_libraries(mldsa_analysis PRIVATE
+    ${OQS_LIBRARY}
+    crypto
+)

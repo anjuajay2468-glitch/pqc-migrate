@@ -1,0 +1,7 @@
+algorithm,category,operation,iterations,average_us,minimum_us,maximum_us,correctness
+ML-KEM-768,KEM,keygen,1000,13.410,9.264,1112.967,PASS
+ML-KEM-768,KEM,encapsulation,1000,13.051,9.760,309.780,PASS
+ML-KEM-768,KEM,decapsulation,1000,15.657,11.822,291.190,PASS
+ML-DSA-65,SIGNATURE,keygen,1000,39.243,32.163,450.215,PASS
+ML-DSA-65,SIGNATURE,signing,1000,104.323,40.216,899.279,PASS
+ML-DSA-65,SIGNATURE,verification,1000,36.783,31.081,137.323,PASS

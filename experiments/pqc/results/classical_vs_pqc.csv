@@ -1,0 +1,7 @@
+classical_algorithm,pqc_algorithm,category,operation,classical_average_us,pqc_average_us,classical_minimum_us,pqc_minimum_us,classical_maximum_us,pqc_maximum_us
+X25519,ML-KEM-768,KEM,keygen,105.399,13.410,92.300,9.264,1915.651,1112.967
+X25519,ML-KEM-768,KEM,derivation,93.883,15.657,83.620,11.822,583.486,291.190
+ECDSA-P256,ML-DSA-65,SIGNATURE,keygen,33.742,39.243,25.896,32.163,189.830,450.215
+ECDSA-P256,ML-DSA-65,SIGNATURE,signing,31.707,104.323,25.832,40.216,241.010,899.279
+ECDSA-P256,ML-DSA-65,SIGNATURE,verification,87.905,36.783,73.312,31.081,497.187,137.323
+
