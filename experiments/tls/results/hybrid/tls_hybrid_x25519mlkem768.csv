@@ -1,0 +1,2 @@
+algorithm,category,operation,iterations,successful,average_us,minimum_us,maximum_us
+X25519MLKEM768,HYBRID_TLS,handshake,100,100,9600,7483,15394

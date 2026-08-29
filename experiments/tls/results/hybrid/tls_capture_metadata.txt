@@ -1,0 +1,46 @@
+PQC-Migrate TLS Traffic Analysis
+================================
+
+Protocol:
+TLS 1.3
+
+Classical configuration:
+X25519
+
+Hybrid configuration:
+X25519 + ML-KEM-768
+TLS group: X25519MLKEM768
+
+Capture interface:
+lo
+
+Classical port:
+4433
+
+Hybrid port:
+4435
+
+Classical TCP payload:
+2386 bytes
+
+Hybrid TCP payload:
+4642 bytes
+
+Additional hybrid payload:
+2256 bytes
+
+Hybrid payload overhead:
+94.55%
+
+Classical IP packets:
+16
+
+Hybrid IP packets:
+16
+
+Notes:
+- Measurements are based on one complete local TLS connection per configuration.
+- TCP payload excludes TCP/IP headers.
+- Capture includes connection setup and teardown.
+- Self-signed RSA-2048 certificate used in the local testbed.
+- Hybrid TLS uses OpenSSL 3.5.4 and X25519MLKEM768.
