@@ -1,0 +1,2 @@
+algorithm,category,operation,kex,iterations,successful,average_us,minimum_us,maximum_us,correctness
+X25519,CLASSICAL,connection,curve25519-sha256,100,100,207311,184897,433975,PASS

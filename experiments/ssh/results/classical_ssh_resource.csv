@@ -1,0 +1,2 @@
+algorithm,category,operation,kex,iterations,successful,average_elapsed_s,average_user_cpu_s,average_system_cpu_s,max_rss_kb
+X25519,CLASSICAL,connection,curve25519-sha256,100,100,0.188600,0.001500,0.000100,8344

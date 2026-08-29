@@ -27,3 +27,4 @@ results/generated/
 # OS files
 .DS_Store
 Thumbs.db
+experiments/ssh/id_ed25519

@@ -1,0 +1,2 @@
+algorithm,category,operation,kex,classical_component,pqc_component,iterations,successful,average_elapsed_s,average_user_cpu_s,average_system_cpu_s,max_rss_kb
+sntrup761x25519,HYBRID,connection,sntrup761x25519-sha512@openssh.com,X25519,Streamlined-NTRU-Prime,100,100,0.225600,0.056200,0.000300,8356

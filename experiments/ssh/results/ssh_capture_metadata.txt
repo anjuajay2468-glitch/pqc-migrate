@@ -1,0 +1,53 @@
+PQC-Migrate SSH Traffic Analysis
+================================
+
+Protocol:
+SSH-2
+
+Classical configuration:
+curve25519-sha256
+
+Hybrid configuration:
+sntrup761x25519-sha512@openssh.com
+
+Hybrid classical component:
+X25519
+
+Hybrid PQ component:
+Streamlined NTRU Prime
+
+Capture interface:
+lo
+
+SSH port:
+22
+
+Classical TCP payload:
+5234 bytes
+
+Hybrid TCP payload:
+7450 bytes
+
+Additional hybrid payload:
+2216 bytes
+
+Hybrid payload overhead:
+42.34%
+
+Classical IP packets:
+39
+
+Hybrid IP packets:
+39
+
+Additional IP packets:
+0
+
+Notes:
+- Measurements are based on one complete local SSH connection per configuration.
+- TCP payload excludes TCP/IP headers.
+- Capture includes connection setup and teardown.
+- Dedicated local SSH benchmark account was used.
+- Classical KEX was explicitly forced to curve25519-sha256.
+- Hybrid KEX was explicitly forced to sntrup761x25519-sha512@openssh.com.
+- Hybrid SSH uses the OpenSSH 9.6p1 implementation supplied by Ubuntu.
