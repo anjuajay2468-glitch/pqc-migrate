@@ -623,7 +623,8 @@ Rather than treating post-quantum migration as a single algorithm-selection prob
 
 ## License
 
-License information will be added before public release.
+This project is licensed under the MIT License.
+See the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -633,11 +634,5 @@ License information will be added before public release.
 
 B.Tech - Electronics and Computer Science Engineering
 
-Research interests:
+GitHub: https://github.com/anjuajay2468-glitch
 
-- Post-Quantum Cryptography
-- Systems and Distributed Systems
-- Cloud Infrastructure
-- Network Security
-- Applied Cryptography
-- Secure Systems
