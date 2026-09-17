@@ -1,0 +1,5 @@
+protocol,configuration,key_exchange,network_condition,latency_ms,bandwidth_mbps,packet_loss_percent,iterations,successful,average_latency_us,minimum_latency_us,maximum_latency_us
+TLS,Classical,X25519,baseline,0,unlimited,0,100,100,26775,21369,32466
+TLS,Hybrid,X25519MLKEM768,baseline,0,unlimited,0,100,100,9322,7100,15190
+SSH,Classical,curve25519-sha256,baseline,0,unlimited,0,100,100,205460,176814,646414
+SSH,Hybrid,sntrup761x25519-sha512@openssh.com,baseline,0,unlimited,0,100,100,288053,230844,627320

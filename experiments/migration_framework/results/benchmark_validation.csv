@@ -1,0 +1,13 @@
+protocol,network_profile,median_overhead_pct,p95_overhead_pct,adjusted_p_value,rank_biserial_correlation,effect_category,statistically_significant,performance_sensitive_condition,evidence_classification,expected_strategy
+SSH,bandwidth1mbps,39.2731,34.1209,0.000274,-1.0,Large,True,True,Strong_positive_hybrid_latency_evidence,PQC
+SSH,baseline,29.7243,-55.5919,9.6e-05,-0.8,Large,True,True,Strong_positive_hybrid_latency_evidence,PQC
+SSH,latency100,1.0448,6.5662,0.000777,-0.92,Large,True,False,Strong_positive_hybrid_latency_evidence,PQC
+SSH,latency200,0.5146,0.5964,0.000274,-1.0,Large,True,False,Strong_positive_hybrid_latency_evidence,PQC
+SSH,loss1,28.6786,179.7944,0.000274,-1.0,Large,True,True,Strong_positive_hybrid_latency_evidence,PQC
+SSH,mobile,2.1705,10.7342,0.73373,-0.1,Negligible,False,False,Observed_positive_hybrid_latency_difference,PQC
+TLS,bandwidth1mbps,66.4479,56.3906,0.000274,-1.0,Large,True,True,Strong_positive_hybrid_latency_evidence,PQC
+TLS,baseline,-59.3215,-64.4416,1e-06,1.0,Large,True,False,Statistically_supported_non_positive_difference,PQC
+TLS,latency100,-2.5849,-3.0582,0.000274,1.0,Large,True,False,Statistically_supported_non_positive_difference,PQC
+TLS,latency200,-0.9206,-0.3879,0.003393,0.8,Large,True,False,Statistically_supported_non_positive_difference,PQC
+TLS,loss1,-60.4392,-64.7983,0.000274,1.0,Large,True,False,Statistically_supported_non_positive_difference,PQC
+TLS,mobile,9.0018,114.4443,0.153235,-0.4,Medium,False,True,Observed_positive_hybrid_latency_difference,PQC
