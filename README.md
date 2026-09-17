@@ -1,50 +1,50 @@
-﻿# PQC-Migrate
+# PQC-Migrate
 
 ## Evidence-Based Post-Quantum Cryptographic Migration Benchmarking Framework
 
-**PQC-Migrate** is a research-oriented experimental framework for studying the performance and deployment trade-offs of post-quantum cryptographic migration in secure communication protocols.
+PQC-Migrate is a research-oriented experimental framework for studying the performance and deployment trade-offs of post-quantum cryptographic migration in secure communication protocols.
 
-The project evaluates **classical and hybrid cryptographic configurations across TLS and SSH**, subjects them to controlled network conditions, analyzes the resulting measurements statistically, and uses the empirical evidence to construct an **explainable migration decision framework**.
+The project evaluates classical and hybrid cryptographic configurations across TLS and SSH, subjects them to controlled network conditions, analyzes the resulting measurements statistically, and uses the empirical evidence to construct an explainable migration decision framework.
 
-> **Research focus:** Post-Quantum Cryptography | Applied Cryptography | Network Security | Secure Protocols | Performance Benchmarking | Cryptographic Migration
+**Research focus:** Post-Quantum Cryptography | Applied Cryptography | Network Security | Secure Protocols | Performance Benchmarking | Cryptographic Migration
 
 ---
 
 ## Research Question
 
-> **How does the performance impact of post-quantum cryptographic migration vary across secure communication protocols and network conditions, and how can empirical evidence be transformed into an explainable migration decision framework?**
+> How does the performance impact of post-quantum cryptographic migration vary across secure communication protocols and network conditions, and how can empirical evidence be transformed into an explainable migration decision framework?
 
-### Supporting Research Questions
+### Supporting Questions
 
 - How does hybrid post-quantum cryptography compare with classical cryptography in TLS and SSH?
 - How do latency, bandwidth limitations, packet loss, and mobile-like conditions affect migration overhead?
 - Which observed differences are statistically significant, and how large are their practical effects?
-- How can empirical benchmark evidence be incorporated into an explainable migration decision process?
+- How can benchmark evidence be incorporated into an explainable migration decision process?
 
 ---
 
-# Research at a Glance
+## Research at a Glance
 
 | Dimension | Evaluation |
 |---|---|
-| **Protocols** | TLS, SSH |
-| **Classical TLS** | X25519 |
-| **Hybrid TLS** | X25519MLKEM768 |
-| **Classical SSH** | curve25519-sha256 |
-| **Hybrid SSH** | sntrup761x25519-sha512@openssh.com |
-| **Network profiles** | 6 |
-| **Benchmark observations** | **280** |
-| **Statistical testing** | Mannâ€“Whitney U |
-| **Multiple-comparison correction** | Benjaminiâ€“Hochberg FDR |
-| **Effect-size analysis** | Rank-biserial correlation |
-| **Outlier analysis** | IQR-based |
-| **Decision framework** | Evidence-based migration model |
-| **Framework validation** | 432 decision combinations + benchmark validation |
-| **Research status** | Phases 0â€“11 complete; paper in progress |
+| Protocols | TLS, SSH |
+| Classical TLS | X25519 |
+| Hybrid TLS | X25519MLKEM768 |
+| Classical SSH | curve25519-sha256 |
+| Hybrid SSH | sntrup761x25519-sha512@openssh.com |
+| Network profiles | 6 |
+| Benchmark observations | **280** |
+| Statistical testing | Mann-Whitney U |
+| Multiple-comparison correction | Benjamini-Hochberg FDR |
+| Effect-size analysis | Rank-biserial effect size |
+| Outlier analysis | IQR-based |
+| Decision framework | Evidence-based migration model |
+| Framework validation | 432 decision combinations plus benchmark validation |
+| Research status | Phases 0-11 complete; paper in progress |
 
 ---
 
-# Why This Project?
+## Why This Project?
 
 Post-quantum cryptography introduces new cryptographic primitives and protocol configurations, but migration is not simply a matter of replacing one algorithm with another.
 
@@ -60,13 +60,13 @@ The practical impact can depend on:
 - migration urgency, and
 - variability in observed measurements.
 
-PQC-Migrate investigates these factors experimentally and connects **measured performance evidence** with **migration decision support**.
+PQC-Migrate investigates these factors experimentally and connects measured performance evidence with migration decision support.
 
 The objective is not to prescribe a universal migration strategy, but to provide a reproducible methodology for evaluating migration trade-offs under defined experimental conditions.
 
 ---
 
-# What I Built
+## What I Built
 
 PQC-Migrate was developed as an end-to-end experimental and analytical pipeline.
 
@@ -103,8 +103,8 @@ Built an analysis pipeline covering:
 
 - descriptive statistics,
 - median and percentile analysis,
-- Mannâ€“Whitney U testing,
-- Benjaminiâ€“Hochberg FDR correction,
+- Mann-Whitney U testing,
+- Benjamini-Hochberg FDR correction,
 - rank-biserial effect sizes,
 - IQR-based outlier detection,
 - coefficient-of-variation analysis.
@@ -123,80 +123,85 @@ Validated the decision model across **432 combinations of decision inputs** and 
 
 ---
 
-# System Architecture
+## System Architecture
 
 ```text
-                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-                    â”‚ Classical Cryptography      â”‚
-                    â”‚ X25519 / Curve25519         â”‚
-                    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                                   â”‚
-                                   â”‚
-                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-                    â”‚ Hybrid PQC Cryptography     â”‚
-                    â”‚ X25519MLKEM768 /             â”‚
-                    â”‚ sntrup761x25519-sha512      â”‚
-                    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                                   â”‚
-                                   â–¼
-                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-                    â”‚       TLS / SSH Layer       â”‚
-                    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                                   â”‚
-                                   â–¼
-                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-                    â”‚   Network Condition Layer   â”‚
-                    â”‚                             â”‚
-                    â”‚ Baseline                    â”‚
-                    â”‚ 100 ms / 200 ms latency     â”‚
-                    â”‚ 1 Mbps bandwidth            â”‚
-                    â”‚ 1% packet loss              â”‚
-                    â”‚ Mobile-like profile        â”‚
-                    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                                   â”‚
-                                   â–¼
-                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-                    â”‚     Benchmark Collection    â”‚
-                    â”‚        280 observations     â”‚
-                    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                                   â”‚
-                                   â–¼
-             â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-             â”‚                     â”‚                     â”‚
-             â–¼                     â–¼                     â–¼
-      Descriptive Stats      Significance Tests      Variability
-             â”‚                     â”‚                     â”‚
-             â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                                   â–¼
-                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-                    â”‚       Evidence Model        â”‚
-                    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                                   â”‚
-                                   â–¼
-                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-                    â”‚ Migration Decision Engine   â”‚
-                    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
-                                   â”‚
-                                   â–¼
-                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
-                    â”‚ Explainable Migration Path  â”‚
-                    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
++---------------------------+
+| Classical Cryptography    |
+| X25519 / Curve25519       |
++-------------+-------------+
+              |
+              v
++---------------------------+
+| Hybrid PQC Cryptography   |
+| X25519MLKEM768            |
+| sntrup761x25519-sha512    |
++-------------+-------------+
+              |
+              v
++---------------------------+
+| TLS / SSH Protocol Layer  |
++-------------+-------------+
+              |
+              v
++---------------------------+
+| Network Condition Layer   |
+|                           |
+| Baseline                  |
+| 100 ms / 200 ms latency   |
+| 1 Mbps bandwidth          |
+| 1% packet loss            |
+| Mobile-like profile       |
++-------------+-------------+
+              |
+              v
++---------------------------+
+| Benchmark Collection      |
+| 280 observations          |
++-------------+-------------+
+              |
+              v
++---------------------------+
+| Statistical Analysis      |
+|                           |
+| Descriptive Statistics    |
+| Significance Testing      |
+| Effect Size               |
+| Outlier Analysis          |
+| Variability Analysis      |
++-------------+-------------+
+              |
+              v
++---------------------------+
+| Evidence Model            |
++-------------+-------------+
+              |
+              v
++---------------------------+
+| Migration Decision Engine |
++-------------+-------------+
+              |
+              v
++---------------------------+
+| Explainable Migration     |
+| Strategy                  |
++---------------------------+
 ```
 
 ---
 
-# Experimental Methodology
+## Experimental Methodology
 
-## Protocol Evaluation
+### Protocol Evaluation
 
-### TLS
+#### TLS
 
 | Configuration | Key Exchange |
 |---|---|
 | Classical | X25519 |
 | Hybrid | X25519MLKEM768 |
 
-### SSH
+#### SSH
 
 | Configuration | Key Exchange |
 |---|---|
@@ -205,26 +210,24 @@ Validated the decision model across **432 combinations of decision inputs** and 
 
 The experiments compare protocol behavior while keeping the evaluation focused on the defined classical and hybrid configurations.
 
----
-
-## Network Conditions
+### Network Conditions
 
 Each protocol/configuration pair was evaluated under multiple network environments:
 
 | Profile | Purpose |
 |---|---|
-| **Baseline** | Reference environment |
-| **Latency 100 ms** | Moderate network delay |
-| **Latency 200 ms** | High network delay |
-| **Bandwidth 1 Mbps** | Bandwidth-constrained environment |
-| **Packet Loss 1%** | Lossy network environment |
-| **Mobile-like** | Combined constrained/mobile-style conditions |
+| Baseline | Reference environment |
+| Latency 100 ms | Moderate network delay |
+| Latency 200 ms | High network delay |
+| Bandwidth 1 Mbps | Bandwidth-constrained environment |
+| Packet loss 1% | Lossy network environment |
+| Mobile-like | Combined constrained/mobile-style conditions |
 
 This allows migration behavior to be examined beyond a single idealized local-network measurement.
 
 ---
 
-# Benchmark Dataset
+## Benchmark Dataset
 
 Phase 9 consolidated the experimental measurements into:
 
@@ -232,13 +235,13 @@ Phase 9 consolidated the experimental measurements into:
 
 covering:
 
-- TLS and SSH
-- classical and hybrid configurations
-- six network profiles
-- repeated measurements
-- dataset validation
-- statistical summaries
-- hybrid-overhead analysis
+- TLS and SSH,
+- classical and hybrid configurations,
+- six network profiles,
+- repeated measurements,
+- dataset validation,
+- statistical summaries,
+- hybrid-overhead analysis, and
 - variability analysis.
 
 The dataset and generated analysis artifacts are maintained in:
@@ -247,7 +250,7 @@ The dataset and generated analysis artifacts are maintained in:
 experiments/large_scale/
 ```
 
-See:
+Key artifacts:
 
 - `experiments/large_scale/README.md`
 - `experiments/large_scale/PHASE9_REPORT.md`
@@ -258,11 +261,11 @@ See:
 
 ---
 
-# Statistical Analysis
+## Statistical Analysis
 
 The benchmark data is analyzed using a dedicated statistical pipeline.
 
-## Descriptive Analysis
+### Descriptive Analysis
 
 The analysis calculates:
 
@@ -273,27 +276,25 @@ The analysis calculates:
 - percentiles,
 - variability measures.
 
-## Significance Testing
+### Significance Testing
 
-Classical and hybrid measurements are compared using the **two-sided Mannâ€“Whitney U test**.
+Classical and hybrid measurements are compared using the **two-sided Mann-Whitney U test**.
 
-Because multiple comparisons are performed, the analysis applies **Benjaminiâ€“Hochberg false-discovery-rate correction**.
+Because multiple comparisons are performed, the analysis applies **Benjamini-Hochberg false-discovery-rate correction**.
 
-## Effect Size
+### Effect Size
 
 Statistical significance is complemented with **rank-biserial effect-size analysis** to characterize the magnitude and direction of observed differences.
 
-## Outlier Analysis
+### Outlier Analysis
 
-Potential outliers are identified using the **1.5 Ã— IQR rule**.
+Potential outliers are identified using the **1.5 x IQR rule**.
 
 Outliers are retained rather than automatically deleted so that their effect on the experimental interpretation can be examined.
 
-## Practical Interpretation
+### Practical Interpretation
 
-The project distinguishes:
-
-> **statistical significance â‰  practical significance**
+> **Statistical significance is not the same as practical significance.**
 
 A statistically significant difference is therefore not automatically interpreted as a meaningful deployment disadvantage.
 
@@ -305,7 +306,7 @@ experiments/analysis/
 
 ---
 
-# Research Findings
+## Research Findings
 
 The completed analysis indicates that the performance impact of hybrid post-quantum migration is **context-dependent** rather than a single fixed overhead.
 
@@ -335,11 +336,11 @@ experiments/analysis/plots/
 
 ---
 
-# Migration Decision Framework
+## Migration Decision Framework
 
 The final stage of the experimental pipeline converts benchmark evidence into an explainable migration model.
 
-## Decision Inputs
+### Decision Inputs
 
 The framework considers:
 
@@ -353,7 +354,7 @@ Network Profile
 Measured Benchmark Evidence
 ```
 
-## Decision Outputs
+### Decision Outputs
 
 The current model supports four strategy categories:
 
@@ -364,7 +365,7 @@ PQC
 HYBRID_OR_PQC_EVALUATION
 ```
 
-The framework does **not** treat these categories as universally optimal choices. Instead, they represent explainable outcomes of the defined decision rules and experimental evidence.
+The framework does not treat these categories as universally optimal choices. Instead, they represent explainable outcomes of the defined decision rules and experimental evidence.
 
 ### Framework Validation
 
@@ -374,13 +375,11 @@ The decision engine was evaluated across:
 
 and separately validated against the measured benchmark scenarios.
 
-Artifacts:
+Key artifacts:
 
 ```text
 experiments/migration_framework/
 ```
-
-Key files:
 
 - `results/FRAMEWORK_SPEC.md`
 - `results/DECISION_MODEL_SPEC.md`
@@ -394,84 +393,96 @@ Key files:
 
 ---
 
-# Research Pipeline
+## Research Pipeline
 
 ```text
 Phase 0
 Research Foundation
-        â†“
+    |
+    v
 Phase 1
 PQC Deep Dive
-        â†“
+    |
+    v
 Phase 2
 Experimental Environment
-        â†“
+    |
+    v
 Phase 3
 Classical Cryptography Baseline
-        â†“
+    |
+    v
 Phase 4
 PQC Implementation
-        â†“
+    |
+    v
 Phase 5
 Hybrid Cryptography
-        â†“
+    |
+    v
 Phase 6
 TLS Integration
-        â†“
+    |
+    v
 Phase 7
 SSH Integration
-        â†“
+    |
+    v
 Phase 8
 Network Simulation
-        â†“
+    |
+    v
 Phase 9
 Large-Scale Benchmarking
-        â†“
+    |
+    v
 Phase 10
 Statistical Analysis
-        â†“
+    |
+    v
 Phase 11
 Migration Decision Framework
-        â†“
+    |
+    v
 Phase 12
-Research Paper & Publication
+Research Paper and Publication
 ```
 
 ---
 
-# Repository Structure
+## Repository Structure
 
 ```text
 pqc-migrate/
-â”‚
-â”œâ”€â”€ benchmarks/                     # Benchmarking utilities
-â”œâ”€â”€ configs/                        # Experimental configuration
-â”œâ”€â”€ data/                           # Project data
-â”œâ”€â”€ docs/                           # Documentation
-â”‚
-â”œâ”€â”€ experiments/
-â”‚   â”œâ”€â”€ analysis/                   # Statistical analysis & findings
-â”‚   â”œâ”€â”€ large_scale/                # Large-scale benchmark collection
-â”‚   â”œâ”€â”€ migration_framework/        # Migration decision framework
-â”‚   â”œâ”€â”€ network/                    # Network simulation
-â”‚   â”œâ”€â”€ ssh/                        # SSH experiments
-â”‚   â””â”€â”€ tls/                        # TLS experiments
-â”‚
-â”œâ”€â”€ include/                        # Header files
-â”œâ”€â”€ results/                        # Experimental results
-â”œâ”€â”€ scripts/                        # Utility & validation scripts
-â”œâ”€â”€ src/                            # Source code
-â”œâ”€â”€ tests/                          # Tests
-â”œâ”€â”€ third_party/                    # Third-party integration documentation
-â”‚
-â”œâ”€â”€ CMakeLists.txt                  # Build configuration
-â”œâ”€â”€ README.md                       # Project overview
-â””â”€â”€ .gitignore                      # Repository exclusions
+|
++-- benchmarks/                     # Benchmarking utilities
++-- configs/                        # Experimental configuration
++-- data/                           # Project data
++-- docs/                           # Documentation
+|
++-- experiments/
+|   +-- analysis/                   # Statistical analysis and findings
+|   +-- large_scale/               # Large-scale benchmark collection
+|   +-- migration_framework/       # Migration decision framework
+|   +-- network/                    # Network simulation
+|   +-- ssh/                        # SSH experiments
+|   +-- tls/                        # TLS experiments
+|
++-- include/                        # Header files
++-- results/                        # Experimental results
++-- scripts/                        # Utility and validation scripts
++-- src/                            # Source code
++-- tests/                          # Tests
++-- third_party/                    # Third-party integration documentation
+|
++-- CMakeLists.txt                  # Build configuration
++-- README.md                       # Project overview
++-- .gitignore                      # Repository exclusions
 ```
 
 ---
 
-# Reproducibility
+## Reproducibility
 
 Reproducibility is a central part of the project.
 
@@ -498,11 +509,13 @@ The Phase 10 analysis environment used:
 - Matplotlib
 - statsmodels
 
+The cryptographic experiments use OpenSSL with support for the evaluated post-quantum and hybrid configurations.
+
 Local virtual environments, build directories, external dependency source trees, generated logs, and private credentials are excluded from version control.
 
 ---
 
-# Limitations
+## Limitations
 
 The current results are specific to the evaluated:
 
@@ -519,27 +532,27 @@ Consequently, the current findings should be interpreted as evidence from the de
 
 ---
 
-# Research Status
+## Research Status
 
 | Phase | Status |
 |---|---|
-| Phase 0 â€” Research Foundation | âœ… Complete |
-| Phase 1 â€” PQC Deep Dive | âœ… Complete |
-| Phase 2 â€” Experimental Environment | âœ… Complete |
-| Phase 3 â€” Classical Baseline | âœ… Complete |
-| Phase 4 â€” PQC Implementation | âœ… Complete |
-| Phase 5 â€” Hybrid Cryptography | âœ… Complete |
-| Phase 6 â€” TLS Integration | âœ… Complete |
-| Phase 7 â€” SSH Integration | âœ… Complete |
-| Phase 8 â€” Network Simulation | âœ… Complete |
-| Phase 9 â€” Large-Scale Benchmarking | âœ… Complete |
-| Phase 10 â€” Statistical Analysis | âœ… Complete |
-| Phase 11 â€” Migration Framework | âœ… Complete |
-| Phase 12 â€” Research Paper | ðŸ”¬ In Progress |
+| Phase 0 - Research Foundation | Complete |
+| Phase 1 - PQC Deep Dive | Complete |
+| Phase 2 - Experimental Environment | Complete |
+| Phase 3 - Classical Baseline | Complete |
+| Phase 4 - PQC Implementation | Complete |
+| Phase 5 - Hybrid Cryptography | Complete |
+| Phase 6 - TLS Integration | Complete |
+| Phase 7 - SSH Integration | Complete |
+| Phase 8 - Network Simulation | Complete |
+| Phase 9 - Large-Scale Benchmarking | Complete |
+| Phase 10 - Statistical Analysis | Complete |
+| Phase 11 - Migration Framework | Complete |
+| Phase 12 - Research Paper | In Progress |
 
 ---
 
-# Research Paper
+## Research Paper
 
 The completed experimental work is being developed into a research manuscript tentatively titled:
 
@@ -561,9 +574,10 @@ The manuscript will consolidate:
 
 ---
 
-# Technologies
+## Technologies
 
-### Cryptography & Protocols
+### Cryptography and Protocols
+
 - OpenSSL
 - Post-quantum cryptography
 - ML-KEM
@@ -571,14 +585,16 @@ The manuscript will consolidate:
 - TLS
 - SSH
 
-### Systems & Experimentation
+### Systems and Experimentation
+
 - Linux / WSL
 - Bash
 - C / C++
 - Python
 - Network traffic and condition simulation
 
-### Data & Statistics
+### Data and Statistics
+
 - Python
 - pandas
 - NumPy
@@ -587,6 +603,7 @@ The manuscript will consolidate:
 - Matplotlib
 
 ### Development
+
 - Git
 - CMake
 - Automated experiment scripts
@@ -594,7 +611,7 @@ The manuscript will consolidate:
 
 ---
 
-# Project Philosophy
+## Project Philosophy
 
 PQC-Migrate follows a simple research principle:
 
@@ -604,7 +621,7 @@ Rather than treating post-quantum migration as a single algorithm-selection prob
 
 ---
 
-# License
+## License
 
 License information will be added before public release.
 
@@ -614,15 +631,13 @@ License information will be added before public release.
 
 **Anju Ajayakumar**
 
-B.Tech â€” Electronics & Computer Science Engineering
+B.Tech - Electronics and Computer Science Engineering
 
-Research interests include:
+Research interests:
 
 - Post-Quantum Cryptography
-- Systems & Distributed Systems
+- Systems and Distributed Systems
 - Cloud Infrastructure
 - Network Security
 - Applied Cryptography
 - Secure Systems
-
-
